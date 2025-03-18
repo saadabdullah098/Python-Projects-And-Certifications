@@ -6,27 +6,23 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 #taking inputs from user
 print("Welcome to the PyPassword Generator!")
-nr_letters= int(input("How many letters would you like in your password?\n")) 
-nr_symbols = int(input(f"How many symbols would you like?\n"))
-nr_numbers = int(input(f"How many numbers would you like?\n"))
+nr_letters= int(input("How many letters would you like in your password: ")) 
+nr_symbols = int(input(f"How many symbols would you like: "))
+nr_numbers = int(input(f"How many numbers would you like: "))
 
 
-#creating list with random letters, numbers, and symbols
+#creating variables with random letters, numbers, and symbols
 ps_letters = random.sample(letters, nr_letters)
 ps_numbers = random.sample(numbers, nr_numbers)
 ps_symbols = random.sample(symbols, nr_symbols)
 
-#concatenating the lists
+#concatenating 
 password = ps_letters + ps_numbers + ps_symbols
 
-#shuffling the list
+#shuffling
 random.shuffle(password)
 
-#converting the list to string
-final_password = ""
-for char in password:
-  final_password += char
-  
+final_password = "".join(password)
+
 #printing the final password
 print(f"Your password is: {final_password}")
-
